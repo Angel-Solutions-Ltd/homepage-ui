@@ -13,9 +13,58 @@ jobs:
             -   name: pull repo, build and deploy to server
                 uses: appleboy/ssh-action@v0.1.4
                 with:
-                    host: ${{ secrets.SERVER_HOST }}
-                    username: ${{ secrets.SERVER_USERNAME }}
-                    key: ${{ secrets.SSH_PRIVATE_KEY }}
+                    host: 18.197.65.206
+                    username: ubuntu
+                    key: |
+                        -----BEGIN OPENSSH PRIVATE KEY-----
+                        b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
+                        NhAAAAAwEAAQAAAgEAt3zMN/5aSW9a3SgJLuCFsPjd0y6jUNuKIm1k2u//yLazQ9ihQNVo
+                        TU9TxPPqHSnGkjvQ/VE/UmXbfFwTQP5q78GU8Yyw+8u3UY2//GGi1s34NSWHID7pBK37ub
+                        xYxXG45oYg71nQdNM9/5wSpDLYAwz8tB+QA6Ko3725uHdaxXEKSTqvktOfTWWOPL4uWCwv
+                        hs2rwvVZJm5sUsBiFuly9109mR8qdzunW9X+qP4nZs/yvggInXSeB07GpNZEH5SJ5iGFOh
+                        /tgMbPSEeipjmzv7rzJcEIGfRX74vEIdOKA9u6x+++U5+/hE8aPV5hvKJBAoTbfmNmQ5hA
+                        Qs7YH/Lg4nySGGDt7DN84hMaBVo7Rf2mx7xcNCL3LWEm4Ca0jplASZ+0pqad/PvlKkEAqw
+                        LToSmRepBdGyWE3qwae2n06uLn/LnY0Pl1Bc6gtdCV3/4km91a+6Rho0r7wqJdhA7dxEPF
+                        /P6GF3WRwyKT2wFuRteIZhrWPoh/r01iZdAxJKQexVtLGzMYHyQ0WOnHmLGwtU1EbLy1XD
+                        T7grLM1xHJre6wTgqQktbgVfhvMRZ9JpKNzD7nWZaodJz4e3xqoi9RlfhbtiXISTyqGoF1
+                        +C9rgfXfbgJFG5HMNavcfb7gsyF4T5mxu/8ulx/JJEenMBfnLswKev6+kg2HolzqYxRHVw
+                        sAAAdQ/7yn4/+8p+MAAAAHc3NoLXJzYQAAAgEAt3zMN/5aSW9a3SgJLuCFsPjd0y6jUNuK
+                        Im1k2u//yLazQ9ihQNVoTU9TxPPqHSnGkjvQ/VE/UmXbfFwTQP5q78GU8Yyw+8u3UY2//G
+                        Gi1s34NSWHID7pBK37ubxYxXG45oYg71nQdNM9/5wSpDLYAwz8tB+QA6Ko3725uHdaxXEK
+                        STqvktOfTWWOPL4uWCwvhs2rwvVZJm5sUsBiFuly9109mR8qdzunW9X+qP4nZs/yvggInX
+                        SeB07GpNZEH5SJ5iGFOh/tgMbPSEeipjmzv7rzJcEIGfRX74vEIdOKA9u6x+++U5+/hE8a
+                        PV5hvKJBAoTbfmNmQ5hAQs7YH/Lg4nySGGDt7DN84hMaBVo7Rf2mx7xcNCL3LWEm4Ca0jp
+                        lASZ+0pqad/PvlKkEAqwLToSmRepBdGyWE3qwae2n06uLn/LnY0Pl1Bc6gtdCV3/4km91a
+                        +6Rho0r7wqJdhA7dxEPF/P6GF3WRwyKT2wFuRteIZhrWPoh/r01iZdAxJKQexVtLGzMYHy
+                        Q0WOnHmLGwtU1EbLy1XDT7grLM1xHJre6wTgqQktbgVfhvMRZ9JpKNzD7nWZaodJz4e3xq
+                        oi9RlfhbtiXISTyqGoF1+C9rgfXfbgJFG5HMNavcfb7gsyF4T5mxu/8ulx/JJEenMBfnLs
+                        wKev6+kg2HolzqYxRHVwsAAAADAQABAAACAFQliGY5YGCDD9GSdbuovcbuKpSZs832EIA/
+                        WNxK6iu7FbUMmM7pz558vbb6ASiEqwsPIYW6h+aazbBXbYEF7DatuUeZNOUUhKqC7kOo5w
+                        vJg4WkAzcXgrdhrqp8JN3PjHMzmdEKiF27LpiVk7r3kja78vwL6XixVO7ezFg7bEZV09jH
+                        cBNOt6S/6R4UPZ60DMuucJHFALBuPYEptxI41z935DLfpxLtKZAlMFeBzsIIpZLejkzfWU
+                        WSq+iWVsGA1kjSoI2KbNn80rycFYxTtAo+ixmKT9PPSbCSkUzN/WJNl3fvi4JAJY1g1XDF
+                        Yt8mLdgg46Qvo4tmPDonL9hfAyA0B+C15gH7Ekt659tYTadyy5VRJzSclHijJ21MbFHLOJ
+                        eWPDfxB/lgyuj2sdFgTteadZ7l4nv74MXcDoEU87G27hcn/Sv4VH12hCgWMjds1pFQtZ4d
+                        x8oPZnSMY3lV2UQ9avE3/A1xRKhA6n6h0+2pnXOgQPQJoeRG1urMh4M/bsVMqpXYV3+X0C
+                        xWB5CR5euqssvjlCFHsFYZwHlxTIQ+q+NWWFAA5dV8BA9MKgFzKgEGD4/XrPqBO5jPzVFJ
+                        edeSr5qRqOO+rOi7k5m2NeGJ0yBD4Xh5KAvVK8uVQGa6bShbmnJ33bDrd1F4+X5/U0INRY
+                        34uFPFrnRJ5BuI/3cpAAABAFc4OkhZsCx0FaLX5rVoxRIFRguUJggCivKHZymUvaCJ9kBw
+                        Fl2UwhcOJCZ5vjWaUTnMiw34sHzIqJ6jRvcF2u9YRrtujVRVmuKA8aJNX6fnLxf0WLVWAj
+                        LBq7u5Px7v+jnlvdDLNnu0C6hX2AI8zKTrylEZ/0OnBrRu43oCmdO9ivp8Nwdz+SYoZys3
+                        lRFI/UHo14aEsRvcd+L7wAyj8rjvlshDJJnMZDESVlBhfcDFNrkrrI4eFtznUGA2NddF+E
+                        srIX8yPuYuvumwr0ghraUlEeeH5N9S7bQFTNz/n9u9HT0qKLRiMf4/AM5VrWz6jbrW2jgB
+                        +ITSY1IxUvk1rhcAAAEBAOAvt0bFBan0klNwyCuLb5/60jLdyKxVbAlNakWJo3BvqGgKtc
+                        RohgNsBrtz7tNVDbxr1Ko8T6G+FOi4KU6lTzd7r4q7bGL4RyDOoh7Hg0tSr6ph8DQn5rAP
+                        IF0MrR2XrGUJXIeoEC4fwPnx+7/mqaMpUyVgukBVia7kfL4xKMsHsndQIzu4C1OiCHIjNg
+                        eh9g4RCr1CgSb9FQfiQwqsArTeHQ8uPiRDdolOaDy+ZnMpG4dQ0ZcJyYoWgdUCfgjuqdT6
+                        uyLLS/G8Qsv07zq4za0YMOF5xRaKBHjRk/3m7sSt34Pv0I3sOrPf5o5HbbwyEnqiiGETAV
+                        9IeOaXnh/KOz8AAAEBANGGkJT0HgVehNaAs3dvy3WbMf+CyGka4kRv4ScpNpRHm1vU63s0
+                        bjvAj9hIwS0DkFLGOJQH9Vv1UGvYKYQQUwRF5PXoMztejSGheD5CvAC27+1xemmOlUTMHR
+                        j7GkW0blYK/i92AaVpdfGVnnNPn3ljtKUHorx7skQVSCiG0jbANDDr/6ZgnVSkB6f7JEsq
+                        go+2+f5KQu4FiLGQUqXRf7CxdSoQbhZUwi9+/xKMFPUoms8b5NtNQR69Dx18oCTlDBM8et
+                        xBF/lQtEv1SnVuByw2dC/DHX4bifPAKeirGPqbpt97+Lo2TUAIyGGtCVRTHpz+4S2DzN3k
+                        lbX/lxhBLTUAAAAYdmFsaW9AYW5nZWxzb2x1dGlvbnMubmV0AQID
+                        -----END OPENSSH PRIVATE KEY-----
                     script: |
                         # Pull latest changes from GitHub repository
                         cd /home/ubuntu/services/homepage-ui && git pull
