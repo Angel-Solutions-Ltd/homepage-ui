@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+    homepage_ui:
+        container_name: homepage_ui
+        image: react_docker
+        ports:
+            - "80:80"
+        volumes:
+            - homepage_ui:/home/ubuntu/services/homepage-ui
+        restart: unless-stopped
+
+networks:
+    homepage_net:
+        driver: bridge
+
+volumes:
+    homepage_ui:
