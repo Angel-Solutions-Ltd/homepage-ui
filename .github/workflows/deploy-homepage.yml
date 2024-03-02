@@ -18,7 +18,7 @@ jobs:
                     key: ${{ secrets.SSH_PRIVATE_KEY }}
                     script: |
                         # Pull latest changes from GitHub repository
-                        ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd /home/ubuntu/services/homepage-ui && git pull'
+                        cd /home/ubuntu/services/homepage-ui && git pull
                         
                         # Check if npm is installed and can be used as a command
                         if ! command -v npm &> /dev/null
@@ -42,7 +42,7 @@ jobs:
                         fi
                         
                         # Install dependencies and build React app
-                        ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd /home/ubuntu/services/homepage-ui && npm install && npm run build'
+                        cd /home/ubuntu/services/homepage-ui && npm install && npm run build
                         
                         # Restart the Docker container
-                        ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} 'cd /home/ubuntu/services/homepage-ui && docker-compose down && docker-compose up -d'
+                        cd /home/ubuntu/services/homepage-ui && docker-compose down && docker-compose up -d
