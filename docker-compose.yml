@@ -1,23 +1,21 @@
 version: '3.8'
 
 services:
-    homepage_ui:
+    app:
         container_name: homepage_ui
-        image: react_docker
+        image: homepage_ui
+        build:
+            context: .
+            target: production
+        volumes:
+            - ./src:/app/src
+            - ./certbot/www/:/var/www/certbot/:ro
         ports:
             - '80:80'
-        volumes:
-            - homepage_ui:/home/ubuntu/services/homepage-ui
+            - '443:443'
         restart: unless-stopped
-
-networks:
-    default:
-        name: 'main_net'
-        driver: bridge
-        driver_opts:
-            com.docker.network.enable_ipv6: "false"
-
-volumes:
-    homepage_ui:
-        name: 'homepage_ui'
-        external: false
+    certbot:
+        image: certbot/certbot:latest
+        volumes:
+            - ./certbot/www/:/var/www/certbot/:rw
+            - ./certbot/conf/:/etc/letsencrypt/:rw
