@@ -5,14 +5,19 @@ services:
         container_name: homepage_ui
         image: react_docker
         ports:
-            - "80:80"
+            - '80:80'
         volumes:
             - homepage_ui:/home/ubuntu/services/homepage-ui
         restart: unless-stopped
 
 networks:
-    homepage_net:
+    default:
+        name: 'main_net'
         driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "false"
 
 volumes:
     homepage_ui:
+        name: 'homepage_ui'
+        external: false
