@@ -3,6 +3,3 @@ FROM certbot/certbot
 
 # Copy certbot nginx configuration
 COPY ./certbot-nginx.conf /etc/letsencrypt/nginx/conf.d/default.conf
-
-# Set executable permission for the script
-RUN chmod +x /init-letsencrypt.sh
