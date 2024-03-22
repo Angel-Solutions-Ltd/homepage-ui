@@ -22,10 +22,6 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
 # Create directory for SSL certificates
 RUN mkdir -p /etc/nginx/live
-# Set permissions and ownership for SSL certificate directory
-RUN chown -R root:root /etc/nginx/live && \
-    chmod -R 600 /etc/nginx/live && \
-    find /etc/nginx/live -type d -exec chmod 700 {} \;
 # Copy SSL certificate files
 COPY /etc/letsencrypt/live /etc/nginx/live
 # Expose port
