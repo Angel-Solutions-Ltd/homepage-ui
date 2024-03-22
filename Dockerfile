@@ -1,28 +1,30 @@
-FROM node:latest AS builder
-ENV NODE_ENV production
-# Add a work directory
+# Use node image as base
+FROM node:14 as builder
+
+# Set working directory
 WORKDIR /app
-# Cache and Install dependencies
-COPY package.json .
-COPY yarn.lock .
-RUN yarn install --production
-# Copy app files
+
+# Copy package.json and yarn.lock
+COPY package.json yarn.lock ./
+
+# Install dependencies using yarn
+RUN yarn install
+
+# Copy source files
 COPY . .
-# Build the app
+
+# Build React app
 RUN yarn build
 
-# Bundle static assets with nginx
-FROM nginx:latest as production
-ENV NODE_ENV production
-# Copy built assets from builder
+# Use nginx as base image
+FROM nginx:alpine
+
+# Copy nginx configuration
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy built React app from builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
-# Remove the default NGINX configuration (if any) and copy custom NGINX config
-RUN rm /etc/nginx/conf.d/default.conf
-# Add your nginx.conf
-COPY nginx.conf /etc/nginx/conf.d
-# Copy SSL certificate files
-ADD live /etc/nginx
-# Expose port
+
+# Expose ports
+EXPOSE 80
 EXPOSE 443
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]

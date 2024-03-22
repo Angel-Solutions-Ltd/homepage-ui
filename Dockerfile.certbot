@@ -1,0 +1,5 @@
+# Use certbot image as base
+FROM certbot/certbot
+
+# Copy certbot nginx configuration
+COPY ./certbot-nginx.conf /etc/letsencrypt/nginx/conf.d/default.conf
