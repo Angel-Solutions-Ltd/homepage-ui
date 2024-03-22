@@ -21,7 +21,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Add your nginx.conf
 COPY nginx.conf /etc/nginx/conf.d
 # Copy SSL certificate files
-COPY live /etc/nginx/conf.d
+ADD /etc/letsencrypt/live /etc/nginx
 # Expose port
 EXPOSE 443
 # Start nginx
