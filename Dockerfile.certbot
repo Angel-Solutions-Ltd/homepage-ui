@@ -3,3 +3,4 @@ FROM certbot/certbot
 
 # Copy certbot nginx configuration
 COPY ./certbot-nginx.conf /etc/letsencrypt/nginx/conf.d/default.conf
+# COPY ./init-letsencrypt.sh /init-letsencrypt.sh
