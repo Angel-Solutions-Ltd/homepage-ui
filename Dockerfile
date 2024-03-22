@@ -20,6 +20,7 @@ COPY --from=builder /app/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 # Add your nginx.conf
 COPY nginx.conf /etc/nginx/conf.d
+COPY /etc/letsencrypt/live /etc/nginx
 # Expose port
 EXPOSE 80
 # Start nginx
