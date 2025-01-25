@@ -1,0 +1,129 @@
+.dice-container {
+    text-align: center;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(-45deg) rotateZ(-90deg);
+    transition: transform 3s ease-out;
+}
+.dot-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.front {
+    transform: translateZ(25px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(25px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(25px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(25px);
+}
+@keyframes roll1 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); /* Roll 1 */
+    }
+}
+@keyframes roll2 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg); /* Roll 2 */
+    }
+}
+@keyframes roll3 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(90deg) rotateY(-90deg) rotateZ(90deg); /* Roll 3 */
+    }
+}
+@keyframes roll4 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(-90deg) rotateY(90deg) rotateZ(90deg); /* Roll 4 */
+    }
+}
+@keyframes roll5 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); /* Roll 5 */
+    }
+}
+@keyframes roll6 {
+    0% {
+        transform: rotateX(-720deg) rotateY(-45deg) rotateZ(-90deg);
+    }
+    100% {
+        transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg); /* Roll 6 */
+    }
+}
+.roll-1 {
+    animation: roll1 2s forwards;
+}
+.roll-2 {
+    animation: roll2 2s forwards;
+}
+.roll-3 {
+    animation: roll3 2s forwards;
+}
+.roll-4 {
+    animation: roll4 2s forwards;
+}
+.roll-5 {
+    animation: roll5 2s forwards;
+}
+.roll-6 {
+    animation: roll6 2s forwards;
+}

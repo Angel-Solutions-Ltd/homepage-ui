@@ -1,0 +1,138 @@
+.logo-wrapper {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.line-1,
+.line-2,
+.line-3,
+.line-4,
+.top-left,
+.top-mid,
+.top-right,
+.bot-left,
+.bot-mid,
+.bot-right,
+.mid-line {
+    background: black;
+    position: absolute;
+    box-shadow: var(--neon-purple);
+}
+
+.line-1 {
+    top: 245px;
+    left: -200px;
+    height: 10px;
+    width: 569px;
+    transform: rotate(60deg);
+}
+
+.line-2 {
+    z-index: 30 !important;
+    background: red !important;
+    /*top: 232px;*/
+    /*height: 40px;*/
+    width: 80px;
+    left: -190px;
+    /*transform: rotate(-60deg);*/
+    clip-path: polygon(5% 99%, 0 100%, 50% 0, 55% 0);
+
+
+
+    height: 500px;
+    top: 0;
+    border: 1px solid blue;
+}
+
+.line-3 {
+    border-radius: 20px 0 30px 0;
+    top: 232px;
+    height: 40px;
+    width: 573px;
+    right: -190px;
+    transform: rotate(60deg);
+}
+
+.line-4 {
+    top: 245px;
+    right: -200px;
+    height: 10px;
+    width: 569px;
+    transform: rotate(-60deg);
+}
+
+.top-left,
+.top-mid,
+.top-right,
+.bot-left,
+.bot-mid,
+.bot-right {
+    height: 10px;
+    width: 150px;
+    z-index: 10;
+    box-shadow: none !important;
+}
+
+.top-mid {
+    top: 0;
+}
+
+.bot-mid {
+    bottom: -1px;
+}
+
+.bot-left {
+    bottom: 0;
+    left: -130px;
+}
+
+.bot-right {
+    bottom: 0;
+    right: -130px;
+}
+
+.top-left {
+    top: 0;
+    left: -130px;
+}
+
+.top-right {
+    top: 0;
+    right: -130px;
+}
+
+.triangle {
+    position: absolute;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-left: 142px solid transparent;
+    border-right: 147px solid transparent;
+    border-bottom: 264px solid cyan;
+    box-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
+.mid-line {
+    height: 20px;
+    width: 300px;
+}
+
+.line-2, .line-3 {
+    z-index: 2;
+}
+
+.line-4 {
+    z-index: 3;
+}

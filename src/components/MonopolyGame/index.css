@@ -1,0 +1,220 @@
+.dice-wrapper {
+    top: 50px;
+    right: 50px;
+    gap: 10px;
+    position: absolute;
+    display: flex;
+    transition: 1s;
+}
+
+.moveDices {
+    animation: moveDices 2s forwards, revertDices 1s 2s forwards;
+}
+
+@keyframes moveDices {
+    0% {
+        top: 50px;
+        right: 50px;
+        gap: 10px;
+    }
+    100% {
+        top: 500px;
+        right: 500px;
+        gap: 50px;
+    }
+}
+
+@keyframes revertDices {
+    0% {
+        gap: 50px;
+        top: 500px;
+        right: 500px;
+    }
+    100% {
+        gap: 10px;
+        top: 50px;
+        right: 50px;
+    }
+}
+
+.monopoly-board {
+    display: flex;
+    flex-direction: column;
+    /*height: 884px;*/
+    /*width: 884px;*/
+    /*border: 1px solid black;*/
+}
+
+.upper-part, .mid-part, .lower-part {
+    display: flex;
+}
+
+.main-square {
+    display: flex;
+    height: calc(var(--card-size) * 1.5);
+    width: calc(var(--card-size) * 1.5);
+}
+
+.mid-square {
+    height: calc(var(--card-size) * 9);
+    width: calc(var(--card-size) * 9);
+    position: relative;
+}
+
+.property-rect, .secondary-rect {
+    display: flex;
+    height: calc(var(--card-size) * 1.5);
+    width: var(--card-size);
+}
+
+.mid-left-part, .mid-right-part {
+    width: calc(var(--card-size) * 1.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.property-rect-rev, .secondary-rect-rev {
+    display: flex;
+    width: calc(var(--card-size) * 1.5);
+    height: var(--card-size);
+}
+
+.main-square, .property-rect, .property-rect-rev, .secondary-rect, .secondary-rect-rev, .mid-square, .monopoly-board {
+    border: 1px solid black;
+}
+
+.property-rect .property-color {
+    height: 25%;
+    width: 100%;
+}
+.property-rect-rev .property-color {
+    height: 100%;
+    width: 25%;
+}
+.upper-part .property-color {
+    border-top: 2px solid black;
+}
+.lower-part .property-color {
+    border-bottom: 2px solid black;
+}
+.mid-right-part .property-color {
+    border-right: 2px solid black;
+}
+.mid-left-part .property-color {
+    border-left: 2px solid black;
+}
+.mid-left-part .property-rect-rev {
+    flex-direction: row-reverse;
+}
+.upper-part .property-rect {
+    flex-direction: column-reverse;
+}
+.p-brown {
+    background: rgb(149, 84, 54);
+}
+.p-blue {
+    background: rgb(170, 224, 240);
+}
+
+.p-pink {
+    background: rgb(217, 58, 150);
+}
+.p-orange {
+    background: rgb(247, 148, 29);
+}
+
+.p-red {
+    background: rgb(237, 27, 36);
+}
+
+.p-yellow {
+    background: rgb(254, 242, 0);
+}
+
+.p-green {
+    background: rgb(31, 178, 90);
+}
+
+.p-darkblue {
+    background: rgb(0, 114, 187);
+}
+.treasure-card, .chance-card {
+    height: 100px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.treasure-card {
+    top: 82px;
+    left: 58px;
+    transform: rotate(135deg);
+    background: linear-gradient(45deg, rgb(170, 224, 240) 30%, rgb(0, 114, 187));
+    border: 5px solid #29a1c3;
+}
+.chance-card {
+    bottom: 82px;
+    right: 58px;
+    transform: rotate(-45deg);
+    background: linear-gradient(45deg, orange 30%, darkorange);
+    border: 5px solid darkorange;
+}
+.treasure-img {
+    height: 50px;
+}
+.nasran-color {
+    background: rgb(205, 230, 208);
+}
+.repeating-border {
+    display: flex;
+    position: absolute;
+    font-size: 10px;
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 1000;
+}
+.rb-top {
+    width: calc(100% + 10px);
+    bottom: calc(100% + 5px);
+}
+.rb-bot {
+    width: calc(100% + 10px);
+    top: calc(100% + 5px);
+    transform: scaleX(-1) scaleY(-1);
+}
+.rb-left {
+    writing-mode: vertical-rl;
+    height: calc(100% + 10px);
+    right: calc(100% + 5px);
+    transform: scaleX(-1) scaleY(-1);
+}
+.rb-right {
+    writing-mode: vertical-rl;
+    height: calc(100% + 10px);
+    left: calc(100% + 5px);
+}
+.corner-dot {
+    background: black;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    position: absolute;
+}
+.cd-1 {
+    left: calc(100% + 7px);
+    top: calc(100% + 7px);
+}
+.cd-2 {
+    right: calc(100% + 7px);
+    top: calc(100% + 7px);
+}
+.cd-3 {
+    left: calc(100% + 7px);
+    bottom: calc(100% + 7px);
+}
+.cd-4 {
+    right: calc(100% + 7px);
+    bottom: calc(100% + 7px);
+}
