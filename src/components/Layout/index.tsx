@@ -10,7 +10,7 @@ interface P {
 
 export default ({}: P) => {
     return (
-        <div className={`hub`}>
+        <div className={`hub non-selectable`}>
             <Navigation />
             <Outlet /> {/* This will render the matched child route component */}
         </div>

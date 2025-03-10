@@ -10,7 +10,7 @@ interface P {
 export default ({}: P) => {
     return (
         <nav>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/home">
+            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/">
                 <button className={`neon-text`}>Home</button>
             </NavLink>
             <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo">

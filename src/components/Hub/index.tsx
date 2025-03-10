@@ -14,10 +14,9 @@ export default () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route path="home" element={<Home />} />
+                    <Route index element={<Home />} /> {/* Default route */}
                     <Route path="logo" element={<MainLogo />} />
                     <Route path="monopoly" element={<MonopolyGame />} />
-                    <Route index element={<Home />} /> {/* Default route */}
                 </Route>
             </Routes>
         </Router>

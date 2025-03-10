@@ -1,0 +1,21 @@
+.pie-items {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-items-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: 1px solid white;
+    z-index: 100000;
+    border-radius: 50%;
+}
