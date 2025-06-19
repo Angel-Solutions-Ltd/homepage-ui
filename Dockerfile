@@ -12,6 +12,6 @@ COPY . .
 
 RUN yarn build
 
-EXPOSE 3010
+EXPOSE 3001
 
 CMD ["serve", "-s", "build"]
