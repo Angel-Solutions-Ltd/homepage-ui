@@ -1,33 +1,17 @@
-# Use node image as base
-FROM node:16 as builder
+FROM node:18-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+COPY package.json .
 
-# Install dependencies using yarn
-RUN yarn install
+RUN npm install
 
-# Copy source files
+RUN npm i -g serve
+
 COPY . .
 
-# Build React app
-RUN yarn build
+RUN npm run build
 
-# Use nginx as base image
-FROM nginx:alpine
+EXPOSE 3000
 
-# Copy nginx configuration
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
-COPY ./init-letsencrypt.sh /init-letsencrypt.sh
-RUN chmod +x /init-letsencrypt.sh
-
-# Copy built React app from builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Expose ports
-EXPOSE 80
-EXPOSE 443
+CMD [ "serve", "-s", "build" ]

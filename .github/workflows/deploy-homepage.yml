@@ -1,4 +1,4 @@
-name: Homepage UI CI/CD Pipeline
+name: Angel Solutions Homepage UI CI/CD Pipeline
 
 on:
     push:
@@ -11,16 +11,16 @@ jobs:
         
         steps:
             -   name: pull repo, build and deploy to server
-                uses: appleboy/ssh-action@v1.0.3
+                uses: appleboy/ssh-action@v1.0.0
                 with:
                     debug: true
                     host: ${{ secrets.AS_IP }}
                     username: ${{ secrets.AS_USER }}
                     key: ${{ secrets.AS_KEY }}
                     script: |
-                        cd /root/services/homepage-ui
+                        cd $ANGEL_UI_PATH
                         docker compose down
                         git stash push --include-untracked
                         git stash drop
                         git pull origin master
-#                        docker-compose up --build -d
+                        docker-compose up --build -d
