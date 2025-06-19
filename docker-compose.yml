@@ -3,7 +3,7 @@ services:
         container_name: angel_solutions_ui
         build: .
         ports:
-            - "3001:3001"
+            - "3010:3010"
         deploy:
             resources:
                 limits:
