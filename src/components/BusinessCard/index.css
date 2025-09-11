@@ -1,0 +1,94 @@
+html {
+    background: white;
+}
+
+.business-card {
+    margin: 0;
+    background: rgb(40, 1, 55);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    font-size: 25px;
+}
+
+.business-card .upper {
+    display: flex;
+    align-self: center;
+    max-width: 90%;
+}
+
+.business-card .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+
+.business-card h1 {
+    font-size: 2em;
+    color: rgb(92, 225, 230);
+    font-family: "asFontBG", serif;
+    font-weight: 5;
+    font-stretch: expanded;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.business-card h2,
+.business-card p {
+    font-size: 1em;
+    color: white;
+    font-family: "Source3Light", serif;
+    font-weight: 5;
+    font-stretch: expanded;
+    text-align: center;
+    margin: 0;
+}
+
+.business-card h3 {
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    font-family: "Source3Light", serif;
+    font-stretch: expanded;
+    text-align: center;
+    margin: 0;
+}
+
+.business-card .line {
+    width: 100%;
+    height: .1em;
+    background: white;
+    border-radius: 50px;
+}
+
+.business-card span {
+    margin: 0 .25em;
+}
+
+.business-card .main {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-card .lower {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 5em;
+}
+
+.business-card h5 {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    color: white;
+    font-family: "Source3Light", serif;
+    font-weight: 5;
+    font-stretch: expanded;
+    align-items: flex-start;
+}

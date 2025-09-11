@@ -5,12 +5,51 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Source3';
+    src: url('./assets/fonts/SourceSans3-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source3Light';
+    src: url('./assets/fonts/SourceSans3-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LoveloLineLight';
+    src: url('./assets/fonts/Lovelo/lovelo_linelight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LoveloBlack';
+    src: url('./assets/fonts/Lovelo/lovelo_black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'asFont';
+    src: url('./assets/fonts/as_font/as_font_3.ttf');
+}
+
+@font-face {
+    font-family: 'asFontBG';
+    src: url('./assets/fonts/as_font/as_font_bg.ttf');
+}
+
 :root {
     --prime-bg: rgba(40, 1, 55, 1);
     --semi-bg: rgba(40, 1, 55, .5);
     --prime-color: cyan;
     --middle-color: rgba(66, 113, 143, 1);
     --secondary-color: white;
+    --light-purple: rgb(82, 0, 120);
     --half-white: #FFFFFF80;
     --quarter-white: #FFFFFF40;
     --cloud-white: #FFFFFF20;

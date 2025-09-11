@@ -7,6 +7,8 @@ import MainLogo from "../MainLogo";
 import Layout from "../Layout";
 import MonopolyGame from "../MonopolyGame";
 import Home from "../Home";
+import SecondLogo from "../SecondLogo";
+import BusinessCard from "../BusinessCard";
 
 export default () => {
 
@@ -15,7 +17,9 @@ export default () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} /> {/* Default route */}
+                    <Route path="business" element={<BusinessCard />} />
                     <Route path="logo" element={<MainLogo />} />
+                    <Route path="logo2" element={<SecondLogo />} />
                     <Route path="monopoly" element={<MonopolyGame />} />
                 </Route>
             </Routes>

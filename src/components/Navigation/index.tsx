@@ -13,8 +13,14 @@ export default ({}: P) => {
             <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/">
                 <button className={`neon-text`}>Home</button>
             </NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/business">
+                <button className={`neon-text`}>Business</button>
+            </NavLink>
             <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo">
                 <button className={`neon-text`}>Logo</button>
+            </NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo2">
+                <button className={`neon-text`}>Second Logo</button>
             </NavLink>
             <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/monopoly">
                 <button className={`neon-text`}>Monopoly</button>

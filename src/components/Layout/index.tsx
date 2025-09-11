@@ -1,18 +1,19 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-
+import { Outlet, useLocation } from 'react-router-dom';
 import './index.css';
 import Navigation from "../Navigation";
 
-interface P {
-
-}
+interface P {}
 
 export default ({}: P) => {
+    const location = useLocation();
+
+    const routesWithNav = ['/', '/logo', '/logo2', '/monopoly'];
+
     return (
         <div className={`hub non-selectable`}>
-            <Navigation />
-            <Outlet /> {/* This will render the matched child route component */}
+            {routesWithNav.includes(location.pathname) && <Navigation />}
+            <Outlet />
         </div>
     );
-}
+};
