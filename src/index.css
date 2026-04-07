@@ -44,71 +44,19 @@
 }
 
 :root {
-    /* original neon-purple theme */
-    /* --prime-bg: rgba(40, 1, 55, 1); */
-    /* --semi-bg: rgba(40, 1, 55, .5); */
-    /* --prime-color: cyan; */
-    /* --middle-color: rgba(66, 113, 143, 1); */
-    /* --secondary-color: white; */
-    /* --hover-bg: rgb(58, 0, 83); */
-    /* --light-purple: rgb(82, 0, 120); */
-
-    /* calm ocean-slate theme */
-    /* --prime-bg: rgba(10, 22, 34, 1); */
-    /* --semi-bg: rgba(10, 22, 34, .5); */
-    /* --prime-color: #6db5a8; */
-    /* --middle-color: rgba(50, 90, 115, 1); */
-    /* --secondary-color: #d8e8e5; */
-    /* --hover-bg: rgb(15, 35, 50); */
-    /* --light-purple: rgb(18, 45, 65); */
-
-    /* construction — charcoal & amber (main theme) */
-    --prime-bg: rgba(26, 24, 22, 1);
-    --semi-bg: rgba(26, 24, 22, .5);
-    --prime-color: #c48b3a;
-    --middle-color: rgba(85, 78, 70, 1);
-    --secondary-color: #e2ddd8;
-    --hover-bg: rgb(42, 38, 34);
-    --light-purple: rgb(55, 50, 44);
-
-    /* raw black & white — see body.theme-bw below */
-    /* --prime-bg: #ffffff; */
-    /* --semi-bg: rgba(255, 255, 255, .5); */
-    /* --prime-color: #000000; */
-    /* --middle-color: rgba(0, 0, 0, .5); */
-    /* --secondary-color: #000000; */
-    /* --hover-bg: rgba(0, 0, 0, .06); */
-    /* --light-purple: rgba(0, 0, 0, .12); */
-
-    --half-white: #FFFFFF80;
-    --quarter-white: #FFFFFF40;
-    --cloud-white: #FFFFFF20;
+    --prime-bg: #ffffff;
+    --prime-color: #000000;
+    --secondary-color: #000000;
+    --subtle-border: rgba(0, 0, 0, 0.15);
     --default-br: 5px;
     --card-size: 75px;
 }
 
-body.theme-bw {
-    --prime-bg: #ffffff;
-    --semi-bg: rgba(255, 255, 255, .5);
-    --prime-color: #000000;
-    --middle-color: rgba(0, 0, 0, .5);
-    --secondary-color: #000000;
-    --hover-bg: #ffffff;
-    --light-purple: #ffffff;
-
-    .basic-item {
-        transition: none;
-        border: 1px solid transparent;
-        &:hover { background: var(--prime-bg); border-color: var(--prime-color); }
-        &:active { background: var(--prime-bg); border-color: var(--prime-color); }
-    }
-
-    .active-item {
-        border: 1px solid var(--prime-color);
-        &, &:hover, &:active {
-            background: var(--prime-bg) !important;
-        }
-    }
+body.theme-dark {
+    --prime-bg: #000000;
+    --prime-color: #ffffff;
+    --secondary-color: #ffffff;
+    --subtle-border: rgba(255, 255, 255, 0.15);
 }
 
 #root *, #root *:before, #root *:after {
@@ -121,6 +69,7 @@ body {
     font-size: 20px;
     font-weight: 100;
     color: var(--secondary-color);
+    background: var(--prime-bg);
 }
 
 a {
@@ -148,22 +97,22 @@ a {
     height: 100%;
     width: 100%;
     background: var(--prime-bg);
-    border: none;
+    border: 1px solid transparent;
     outline: none;
     color: var(--secondary-color);
     cursor: pointer;
-    transition: .3s;
+    transition: none;
     margin: 0;
     padding: 0;
-    border: 1px solid transparent;
 
-    &:hover { background: var(--hover-bg); }
-    &:active { background: var(--light-purple); }
+    &:hover { border-color: var(--prime-color); }
+    &:active { border-color: var(--prime-color); }
 }
 
 .active-item {
+    border: 1px solid var(--prime-color);
     &, &:hover, &:active {
-        background: var(--light-purple) !important;
+        background: var(--prime-bg) !important;
     }
 }
 

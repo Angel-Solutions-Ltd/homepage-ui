@@ -78,7 +78,7 @@
     background-color: var(--prime-bg);
     position: absolute;
     cursor: pointer;
-    transition: background-color 0.25s;
+    transition: none;
     border: 1px solid transparent;
 
     &:before,
@@ -100,8 +100,8 @@
         transform: rotate(-45deg);
     }
 
-    &:hover { background: var(--hover-bg); }
-    &:active { background: var(--light-purple); }
+    &:hover { background: var(--prime-bg); border-color: var(--prime-color); }
+    &:active { background: var(--prime-bg); border-color: var(--prime-color); }
 }
 
 .arrow-left {
@@ -116,12 +116,6 @@
     transform: translateY(-50%) rotate(180deg);
 }
 
-body.theme-bw .arrow-left,
-body.theme-bw .arrow-right {
-    transition: none;
-    &:hover { background: var(--prime-bg); border: 1px solid var(--prime-color); }
-    &:active { background: var(--prime-bg); border: 1px solid var(--prime-color); }
-}
 
 .disabled-arrow {
     &, &:hover, &:active {

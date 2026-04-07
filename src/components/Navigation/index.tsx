@@ -5,19 +5,19 @@ import { SITE } from '../../config/site';
 import './index.css';
 
 export default () => {
-    const [isBW, setIsBW] = useState(() => {
-        const saved = localStorage.getItem('theme') === 'bw';
-        if (saved) document.body.classList.add('theme-bw');
+    const [isDark, setIsDark] = useState(() => {
+        const saved = localStorage.getItem('theme') === 'dark';
+        if (saved) document.body.classList.add('theme-dark');
         return saved;
     });
 
     const [firstWord, secondWord] = SITE.company.nameParts;
 
     const toggleTheme = () => {
-        setIsBW(prev => {
+        setIsDark(prev => {
             const next = !prev;
-            document.body.classList.toggle('theme-bw', next);
-            localStorage.setItem('theme', next ? 'bw' : 'main');
+            document.body.classList.toggle('theme-dark', next);
+            localStorage.setItem('theme', next ? 'dark' : 'light');
             return next;
         });
     };
@@ -49,7 +49,7 @@ export default () => {
                 </NavLink>
             </div>
             <button className="theme-toggle" onClick={toggleTheme}>
-                {isBW ? 'Color' : 'B&W'}
+                {isDark ? '☀' : '☾'}
             </button>
         </nav>
     );

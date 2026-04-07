@@ -26,7 +26,7 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--prime-color);
-    border-bottom: 1px solid var(--quarter-white);
+    border-bottom: 1px solid var(--subtle-border);
     padding-bottom: 0.5rem;
 }
 
@@ -42,24 +42,13 @@
     color: var(--secondary-color);
     padding: 0.3rem 0.5rem;
     border-radius: 3px;
-    transition: color 0.2s, background 0.2s;
+    transition: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
     border: 1px solid transparent;
-    
-    &:hover {
-        background: var(--cloud-white);
-    }
 
-    &:active {
-        background: var(--quarter-white);
-    }
-}
-
-body.theme-bw .link-item {
-    transition: none;
-    &:hover { background: var(--prime-bg); border: 1px solid var(--prime-color); }
-    &:active { background: var(--prime-bg); border: 1px solid var(--prime-color); }
+    &:hover { border-color: var(--prime-color); }
+    &:active { border-color: var(--prime-color); }
 }

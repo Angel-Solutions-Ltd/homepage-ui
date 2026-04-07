@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    border-bottom: 1px solid var(--middle-color);
+    border-bottom: 1px solid var(--subtle-border);
     padding-bottom: 1rem;
 }
 

@@ -50,15 +50,15 @@ nav {
             background: var(--prime-bg);
             color: var(--secondary-color);
             cursor: pointer;
-            transition: .3s;
+            transition: none;
             font-size: clamp(10px, 1.2vw, 16px);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            border: 1px solid transparent;
+            border-bottom: 1px solid transparent;
 
-            &:hover { background: var(--hover-bg); }
-            &:active { background: var(--light-purple); }
+            &:hover { border-bottom-color: var(--prime-color); }
+            &:active { border-bottom-color: var(--prime-color); }
         }
     }
 
@@ -68,45 +68,19 @@ nav {
         background: transparent;
         border: 1px solid var(--prime-color);
         color: var(--prime-color);
-        font-family: inherit;
-        font-size: clamp(9px, 1vw, 13px);
-        padding: 0.2rem 0.6rem;
+        font-size: 1rem;
+        padding: 0.15rem 0.4rem;
         cursor: pointer;
-        border-radius: var(--default-br);
-        transition: .3s;
+        transition: none;
+        line-height: 1;
 
-        &:hover { background: var(--hover-bg); }
-        &:active { background: var(--light-purple); }
+        &:hover { background: var(--prime-color); color: var(--prime-bg); }
+        &:active { background: var(--prime-color); color: var(--prime-bg); }
     }
 }
 
 .active-link {
     span {
-        background: var(--light-purple);
-
-        &:hover { background: var(--light-purple) !important; }
-    }
-}
-
-body.theme-bw {
-    nav {
-        a span {
-            transition: none;
-            border: 1px solid transparent;
-            &:hover { background: var(--prime-bg); border-color: var(--prime-color); }
-            &:active { background: var(--prime-bg); border-color: var(--prime-color); }
-        }
-
-        .theme-toggle {
-            transition: none;
-            &:hover { background: var(--prime-bg); border-color: var(--prime-color); }
-            &:active { background: var(--prime-bg); }
-        }
-    }
-
-    .active-link span {
-        background: var(--prime-bg);
-        border: 1px solid var(--prime-color);
-        &:hover { background: var(--prime-bg) !important; }
+        border-bottom: 1px solid var(--prime-color) !important;
     }
 }
