@@ -47,12 +47,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
+    border: 1px solid transparent;
     
     &:hover {
         background: var(--cloud-white);
     }
-    
+
     &:active {
         background: var(--quarter-white);
     }
+}
+
+body.theme-bw .link-item {
+    transition: none;
+    &:hover { background: var(--prime-bg); border: 1px solid var(--prime-color); }
+    &:active { background: var(--prime-bg); border: 1px solid var(--prime-color); }
 }

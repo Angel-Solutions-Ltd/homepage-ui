@@ -16,14 +16,14 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    border-bottom: 1px solid var(--quarter-white);
+    border-bottom: 1px solid var(--middle-color);
     padding-bottom: 1rem;
 }
 
 .font-label {
     font-family: 'Source3', sans-serif;
     font-size: 0.75rem;
-    color: var(--half-white);
+    color: var(--prime-color);
     width: 140px;
     flex-shrink: 0;
     text-transform: uppercase;

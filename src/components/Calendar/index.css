@@ -79,10 +79,11 @@
     position: absolute;
     cursor: pointer;
     transition: background-color 0.25s;
+    border: 1px solid transparent;
 
     &:before,
     &:after {
-        background: white;
+        background: var(--secondary-color);
         height: 1px;
         width: 25%;
         content: "";
@@ -99,8 +100,8 @@
         transform: rotate(-45deg);
     }
 
-    &:hover { background: rgb(58, 0, 83); }
-    &:active { background: rgb(82, 0, 120); }
+    &:hover { background: var(--hover-bg); }
+    &:active { background: var(--light-purple); }
 }
 
 .arrow-left {
@@ -113,6 +114,13 @@
     left: calc(100% + 25px);
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
+}
+
+body.theme-bw .arrow-left,
+body.theme-bw .arrow-right {
+    transition: none;
+    &:hover { background: var(--prime-bg); border: 1px solid var(--prime-color); }
+    &:active { background: var(--prime-bg); border: 1px solid var(--prime-color); }
 }
 
 .disabled-arrow {
