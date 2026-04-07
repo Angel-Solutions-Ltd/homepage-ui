@@ -1,28 +1,33 @@
 import './index.css';
+import { SITE } from '../../config/site';
 
-interface P {
+const FONTS = [
+    { label: 'Source Sans Light', family: 'Source Sans Light' },
+    { label: 'Source3 Regular',   family: 'Source3' },
+    { label: 'Source3 Light',     family: 'Source3Light' },
+    { label: 'Lovelo Line Light', family: 'LoveloLineLight' },
+    { label: 'Lovelo Black',      family: 'LoveloBlack' },
+    { label: 'AS Font',           family: 'asFont' },
+    { label: 'AS Font BG',        family: 'asFontBG' },
+];
 
-}
+const [firstWord, secondWord] = SITE.company.name.split(' ');
+
+interface P {}
 
 export default ({}: P) => {
     return (
-        <div className={`content-page`}>
-            <div className={`logo-wrapper`}>
-                <div className={`line-1`}></div>
-                <div className={`line-2`}></div>
-                <div className={`line-3`}></div>
-                <div className={`line-4`}></div>
-
-                <div className={`top-left`}></div>
-                <div className={`top-mid`}></div>
-                <div className={`top-right`}></div>
-
-                <div className={`bot-left`}></div>
-                <div className={`bot-mid`}></div>
-                <div className={`bot-right`}></div>
-
-                <div className={`mid-line`}></div>
-                {/*<div className={`triangle`}></div>*/}
+        <div className="font-comparison-page content-page">
+            <div className="font-comparison-list">
+                {FONTS.map(({ label, family }) => (
+                    <div key={family} className="font-comparison-row">
+                        <span className="font-label">{label}</span>
+                        <span className="font-sample" style={{ fontFamily: family }}>
+                            <span className="word-first">{firstWord}</span>
+                            <span className="word-second">{secondWord}</span>
+                        </span>
+                    </div>
+                ))}
             </div>
         </div>
     );

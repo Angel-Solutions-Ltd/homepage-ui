@@ -1,5 +1,5 @@
 import './index.css';
-import {useState} from "react";
+import { useState, useEffect } from "react";
 import Dice from "../Dice";
 
 import treasure from '../../assets/images/treasure.png';
@@ -10,23 +10,26 @@ interface P {
 
 export default ({}: P) => {
     const SET_PLAYER_LIMIT = 4;
-    const PLAYER_NUM = 2;
     const [counter, setCounter] = useState(0);
     const [turn, setTurn] = useState(1);
     const [isRolling, setRolling] = useState(false);
     const [currentFace, setCurrentFace] = useState([0,0]);
 
+    useEffect(() => {
+        if (!isRolling) return;
+        const timer = setTimeout(() => setRolling(false), 3000);
+        return () => clearTimeout(timer);
+    }, [isRolling]);
+
     const rollDice = () => {
         setRolling(true);
-        setCounter(counter + 1);
+        setCounter(prev => prev + 1);
         const randomFace1 = Math.floor(Math.random() * 6) + 1;
         const randomFace2 = Math.floor(Math.random() * 6) + 1;
         setCurrentFace([randomFace1, randomFace2]);
         if(randomFace1 !== randomFace2) {
             setTurn((prevState) => prevState >= SET_PLAYER_LIMIT ? 1 : prevState + 1);
         }
-
-        setTimeout(() => setRolling(false), 3000);
     };
 
     return (
@@ -122,7 +125,7 @@ export default ({}: P) => {
                             <div className={`corner-dot cd-2`}></div>
                             <div className={`corner-dot cd-3`}></div>
                             <div className={`corner-dot cd-4`}></div>
-                            <img className={`treasure-img`} src={treasure} alt="" />
+                            <img className={`treasure-img`} src={treasure} alt="Treasure card" />
                         </div>
 
                         <div className={`chance-card`}>
@@ -134,7 +137,7 @@ export default ({}: P) => {
                             <div className={`corner-dot cd-2`}></div>
                             <div className={`corner-dot cd-3`}></div>
                             <div className={`corner-dot cd-4`}></div>
-                            <img className={`treasure-img`} src={treasure} alt="" />
+                            <img className={`treasure-img`} src={treasure} alt="Treasure card" />
                         </div>
                     </div>
 
@@ -216,7 +219,6 @@ export default ({}: P) => {
                     <div className={`main-square`}></div>
                 </div>
             </div>
-
 
             {/*<button onClick={rollDice} disabled={isRolling}>*/}
             {/*    Roll Dice*/}

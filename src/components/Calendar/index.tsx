@@ -1,8 +1,18 @@
-import React, {useRef, useState} from 'react';
+import React, { useState, useMemo } from 'react';
 
 import './index.css';
 import {capitalizeFirstNLetters, formatDate} from "../../utils/helpers";
 import useLocalStorage from "../../hooks/useLocalStorage";
+
+const MONTHS = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
+const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const getDaysInMonth = (month: number, year: number) => {
+    return new Date(year, month + 1, 0).getDate();
+};
 
 interface P {
 
@@ -17,92 +27,77 @@ export default ({}: P) => {
 
         const updatedActivities = { ...activitiesMap };
         if (updatedActivities[date]) {
-            updatedActivities[date].push(activity);
+            updatedActivities[date] = [...updatedActivities[date], activity];
         } else {
             updatedActivities[date] = [activity];
         }
         setActivitiesMap(updatedActivities);
     };
 
-    const months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-
-    const getDaysInMonth = (month: number, year: number) => {
-        return new Date(year, month + 1, 0).getDate();
-    };
-
-    const year = new Date().getFullYear();
-
-    // Get the current date
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonthNum = currentDate.getMonth();
-    const currentDay = currentDate.getDate();
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const today = new Date();
+    const year = today.getFullYear();
+    const currentMonthNum = today.getMonth();
+    const currentDay = today.getDate();
 
     const [currentMonth, setCurrentMonth] = useState(currentMonthNum);
-
     const [currentInput, setCurrentInput] = useState<number | null>(null);
 
-    const renderMonthsAndDays =
-    months.map((month, monthIndex) => {
+    const renderMonthsAndDays = useMemo(() => MONTHS.map((month, monthIndex) => {
         const daysInMonth = getDaysInMonth(monthIndex, year);
         const isActiveMonth = monthIndex === currentMonth;
         const isCurrMonth = monthIndex === currentMonthNum;
-
 
         return (
             <div key={month} className={`month ${isActiveMonth ? 'active-month' : ''}`}>
                 <h2 className={`month-name`}>{month}</h2>
                 <div className={`weekdays`}>
-                    {days.map((day, key) => (
+                    {DAYS.map((day, key) => (
                         <div className={`weekday`} key={key}>{capitalizeFirstNLetters(day, 1)}</div>
                     ))}
                 </div>
                 <div className={`days`}>
                     {Array.from({ length: daysInMonth }, (_, dayIndex) => {
-                        let stringDate = `${currentYear}-${monthIndex + 1}-${dayIndex + 1}`;
-                        let thisDate = new Date(stringDate);
+                        const stringDate = `${year}-${monthIndex + 1}-${dayIndex + 1}`;
+                        const thisDate = new Date(stringDate);
+                        const thisTime = thisDate.getTime();
 
-                        let extraChildren: any = <></>;
+                        let extraChildren: React.ReactNode = null;
 
-                        if(dayIndex === 0) {
+                        if (dayIndex === 0) {
                             let dayOfWeek = thisDate.getDay();
-                            if(dayOfWeek === 0) dayOfWeek = 7;
-                            if(dayOfWeek !== 1) {
-                                extraChildren = Array.from({ length: dayOfWeek - 1 }, (_, dayIndex) => (
-                                    <div key={dayIndex + 1} className={`day basic-item dummy-item`} style={{visibility: 'hidden'}}>0</div>
+                            if (dayOfWeek === 0) dayOfWeek = 7;
+                            if (dayOfWeek !== 1) {
+                                extraChildren = Array.from({ length: dayOfWeek - 1 }, (_, i) => (
+                                    <div key={`dummy-${i}`} className={`day basic-item dummy-item`} style={{visibility: 'hidden'}}>0</div>
                                 ));
                             }
                         }
 
-                        let activitiesClass = activitiesMap[stringDate]?.length > 0 ? 'activities-item' : '';
-                        let activeClass = (currentInput === thisDate.getTime())
-                            ? 'active-item' : 'basic-item';
-                        let currentClass = (isCurrMonth && (dayIndex + 1) === currentDay) ? 'current-day' : '';
+                        const activitiesClass = activitiesMap[stringDate]?.length > 0 ? 'activities-item' : '';
+                        const activeClass = currentInput === thisTime ? 'active-item' : 'basic-item';
+                        const currentClass = (isCurrMonth && (dayIndex + 1) === currentDay) ? 'current-day' : '';
+
                         return (
-                            <>
+                            <React.Fragment key={thisTime}>
                                 {extraChildren}
-                                <div key={dayIndex + 1} className={`day ${currentClass} ${activeClass} ${activitiesClass}`} onClick={(e: any) => {
-                                    !e.target.className.includes('day-input') && setCurrentInput(
-                                        prevState => prevState === thisDate.getTime() ? null : thisDate.getTime()
-                                    )
+                                <div className={`day ${currentClass} ${activeClass} ${activitiesClass}`} onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                                    !(e.target as HTMLElement).className.includes('day-input') && setCurrentInput(
+                                        prevState => prevState === thisTime ? null : thisTime
+                                    );
                                 }}>
                                     {dayIndex + 1}
                                 </div>
-                            </>
-                        )
+                            </React.Fragment>
+                        );
                     })}
                 </div>
             </div>
         );
-    });
+    }), [currentMonth, currentMonthNum, currentDay, currentInput, activitiesMap, year]);
 
-    const changeMonth = (month: number) => {
-        setCurrentMonth(prevState => prevState + month);
-    }
+    const changeMonth = (delta: number) => {
+        setCurrentMonth(prev => Math.min(11, Math.max(0, prev + delta)));
+    };
 
     return (
         <div className={`calendar-outer`}>

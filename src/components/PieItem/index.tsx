@@ -42,8 +42,8 @@ export default ({ content, color, height, width, rotation, top, left, bottom, ri
         <div className={`pie-item-holder`} style={styles.holder}>
 		    <span className={`pie-item-content`} style={styles.content}>{content}</span>
             <svg style={{overflow: 'visible'}} height={`55px`} width={`75px`} xmlns="http://www.w3.org/2000/svg">
-                {/*<path d="M 15 0 Q 25 5 35 0 L 50 50 Q 25 60 0 50 Z" stroke="white" stroke-width="1" fill={'transparent'}></path>*/}
-                <path d="M 20 0 Q 38 15 57 0 L 75 45 Q 38 65 0 45 Z" stroke="white" stroke-width="1" fill={'transparent'}></path>
+                {/*<path d="M 15 0 Q 25 5 35 0 L 50 50 Q 25 60 0 50 Z" stroke="white" strokeWidth="1" fill={'transparent'}></path>*/}
+                <path d="M 20 0 Q 38 15 57 0 L 75 45 Q 38 65 0 45 Z" stroke="white" strokeWidth="1" fill={'transparent'}></path>
             </svg>
         </div>
     );

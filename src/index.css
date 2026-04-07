@@ -54,31 +54,11 @@
     --quarter-white: #FFFFFF40;
     --cloud-white: #FFFFFF20;
     --default-br: 5px;
-
-    --neon-purple: 0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px cyan,
-    0 0 82px cyan,
-    0 0 92px cyan,
-    0 0 102px cyan,
-    0 0 151px cyan;
-
     --card-size: 75px;
-
-    --neon-text: 0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px rgba(40, 1, 55, .5),
-    0 0 82px rgba(40, 1, 55, .5),
-    0 0 92px rgba(40, 1, 55, .5),
-    0 0 102px rgba(40, 1, 55, .5),
-    0 0 151px rgba(40, 1, 55, .5);
 }
 
 #root *, #root *:before, #root *:after {
     box-sizing: border-box;
-    /*border: 1px solid red;*/
 }
 
 body {
@@ -89,17 +69,17 @@ body {
     color: var(--secondary-color);
 }
 
-.neon-text {
-    text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px rgba(40, 1, 55, .5),
-            0 0 82px rgba(40, 1, 55, .5),
-            0 0 92px rgba(40, 1, 55, .5),
-            0 0 102px rgba(40, 1, 55, .5),
-            0 0 151px rgba(40, 1, 55, .5);
+a {
+    text-decoration: none;
+    color: unset;
+
+    &:visited {
+        color: unset;
+    }
 }
+
+.neon-text {}
+
 .content-page {
     display: flex;
     flex-direction: column;
@@ -107,6 +87,7 @@ body {
     align-items: center;
     height: 95vh;
     position: relative;
+    background: var(--prime-bg);
 }
 
 .basic-item {
@@ -120,16 +101,17 @@ body {
     transition: .3s;
     margin: 0;
     padding: 0;
+
+    &:hover { background: rgb(58, 0, 83); }
+    &:active { background: rgb(82, 0, 120); }
 }
-.basic-item:hover {
-    background: rgb(58, 0, 83);
+
+.active-item {
+    &, &:hover, &:active {
+        background: rgb(82, 0, 120) !important;
+    }
 }
-.basic-item:active {
-    background: rgb(82, 0, 120);
-}
-.active-item, .active-item:hover, .active-item:active {
-    background: rgb(82, 0, 120) !important;
-}
+
 .non-selectable {
     user-select: none;
     -webkit-user-select: none;
@@ -137,6 +119,7 @@ body {
     -ms-user-select: none;
     -khtml-user-select: none;
 }
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }

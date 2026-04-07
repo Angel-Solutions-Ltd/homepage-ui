@@ -9,6 +9,7 @@ import MonopolyGame from "../MonopolyGame";
 import Home from "../Home";
 import SecondLogo from "../SecondLogo";
 import BusinessCard from "../BusinessCard";
+import UsefulLinks from "../UsefulLinks";
 
 export default () => {
 
@@ -21,6 +22,7 @@ export default () => {
                     <Route path="logo" element={<MainLogo />} />
                     <Route path="logo2" element={<SecondLogo />} />
                     <Route path="monopoly" element={<MonopolyGame />} />
+                    <Route path="useful-links" element={<UsefulLinks />} />
                 </Route>
             </Routes>
         </Router>

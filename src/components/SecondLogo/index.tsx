@@ -1,4 +1,5 @@
 import './index.css';
+import { SITE } from '../../config/site';
 
 interface P {
 
@@ -7,7 +8,7 @@ interface P {
 export default ({}: P) => {
     return (
         <div className={`content-page second-logo-page`}>
-            <h1 className={`letter-holder`}>AS</h1>
+            <h1 className={`letter-holder`}>{SITE.company.initials}</h1>
         </div>
     );
 }

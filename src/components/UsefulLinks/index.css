@@ -1,0 +1,58 @@
+.useful-links-page {
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 95vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.useful-links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 1rem;
+}
+
+.link-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.section-title {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--prime-color);
+    border-bottom: 1px solid var(--quarter-white);
+    padding-bottom: 0.5rem;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.4rem 1rem;
+}
+
+.link-item {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    
+    &:hover {
+        background: var(--cloud-white);
+    }
+    
+    &:active {
+        background: var(--quarter-white);
+    }
+}

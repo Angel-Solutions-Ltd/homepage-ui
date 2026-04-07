@@ -10,21 +10,26 @@ interface P {
 export default ({}: P) => {
     return (
         <nav>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/">
-                <button className={`neon-text`}>Home</button>
-            </NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/business">
-                <button className={`neon-text`}>Business</button>
-            </NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo">
-                <button className={`neon-text`}>Logo</button>
-            </NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo2">
-                <button className={`neon-text`}>Second Logo</button>
-            </NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/monopoly">
-                <button className={`neon-text`}>Monopoly</button>
-            </NavLink>
+            <div className="nav-items">
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/">
+                    <span className={`neon-text`}>Home</span>
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/business">
+                    <span className={`neon-text`}>Business</span>
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo">
+                    <span className={`neon-text`}>Logo</span>
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/logo2">
+                    <span className={`neon-text`}>Second Logo</span>
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/monopoly">
+                    <span className={`neon-text`}>Monopoly</span>
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'active-link' : ''} to="/useful-links">
+                    <span className={`neon-text`}>Useful Links</span>
+                </NavLink>
+            </div>
         </nav>
     );
 }

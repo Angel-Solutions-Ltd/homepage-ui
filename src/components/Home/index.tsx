@@ -2,7 +2,6 @@ import React from 'react';
 
 import './index.css';
 import Calendar from "../Calendar";
-import PieItem from "../PieItem";
 
 interface P {
 
