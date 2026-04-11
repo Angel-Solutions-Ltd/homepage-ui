@@ -1,0 +1,103 @@
+.services-page {
+    justify-content: flex-start;
+    align-items: center;
+    height: 95vh;
+    overflow-y: auto;
+    padding: 3.5rem 2rem;
+    gap: 3rem;
+}
+
+.services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    max-width: 560px;
+}
+
+.services-title {
+    font-family: 'LoveloLineLight', sans-serif;
+    font-size: 2.2rem;
+    color: var(--prime-color);
+    letter-spacing: 0.04em;
+}
+
+.services-intro {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 1.05rem;
+    color: var(--prime-color);
+    opacity: 0.5;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    width: 100%;
+    max-width: 960px;
+    border: 1px solid var(--subtle-border);
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.4rem 1.8rem;
+    border: 1px solid var(--subtle-border);
+    margin: -1px 0 0 -1px;
+    background: var(--prime-bg);
+    transition: none;
+
+
+}
+
+.service-card-title {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--prime-color);
+}
+
+.services-hook {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.services-hook-text {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.88rem;
+    color: var(--prime-color);
+    opacity: 0.5;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+.services-hook-btn {
+    font-family: 'Source3', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--prime-color);
+    border: 1px solid var(--prime-color);
+    padding: 0.45rem 1.2rem;
+    white-space: nowrap;
+
+    &:hover { background: var(--prime-color); color: var(--prime-bg); }
+    &:active { background: var(--prime-color); color: var(--prime-bg); }
+}
+
+.service-card-body {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.85rem;
+    color: var(--prime-color);
+    opacity: 0.6;
+    line-height: 1.6;
+    margin: 0;
+}

@@ -1,0 +1,144 @@
+.business-card-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    padding: 2rem 1rem;
+    background: var(--prime-bg);
+    box-sizing: border-box;
+}
+
+.business-card {
+    width: min(900px, 100%);
+    box-sizing: border-box;
+    border: 4px solid var(--prime-color);
+    background: var(--prime-bg);
+    padding: clamp(1.5rem, 5vw, 3.8rem) clamp(1.5rem, 6vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--prime-color) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+/* Top section — company */
+.bc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.bc-company-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.92;
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: clamp(1.6rem, 5vw, 3.2rem);
+    color: var(--prime-color);
+}
+
+.bc-name-first  { letter-spacing: 0.08em; }
+.bc-name-second { padding-left: 1.60em; letter-spacing: 0.08em; }
+
+.bc-headline {
+    font-family: 'Source3Light', sans-serif;
+    font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--prime-color);
+    opacity: 0.45;
+    margin: 0;
+    padding-left: 0.1em;
+}
+
+/* Divider */
+.bc-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--prime-color);
+    opacity: 0.2;
+}
+
+/* Bottom section — person left, contact right */
+.bc-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+
+    @media (max-width: 560px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.bc-person {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bc-person-name {
+    font-family: 'Source3', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--prime-color);
+    letter-spacing: 0.03em;
+}
+
+.bc-person-title {
+    font-family: 'Source3Light', sans-serif;
+    font-size: clamp(0.7rem, 1.5vw, 0.88rem);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--prime-color);
+    opacity: 0.45;
+}
+
+.bc-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    font-family: 'Source3Light', sans-serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--prime-color);
+    opacity: 0.6;
+    letter-spacing: 0.03em;
+
+    @media (max-width: 560px) {
+        align-items: flex-start;
+    }
+}
+
+.bc-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.bc-copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--prime-color);
+    opacity: 0.4;
+    transition: none;
+
+    &:hover { opacity: 1; }
+}

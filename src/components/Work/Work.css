@@ -1,0 +1,135 @@
+.work-page {
+    justify-content: flex-start;
+    align-items: center;
+    height: 95vh;
+    overflow-y: auto;
+    padding: 3.5rem 2rem;
+    gap: 3.5rem;
+}
+
+.work-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    max-width: 580px;
+}
+
+.work-title {
+    font-family: 'LoveloLineLight', sans-serif;
+    font-size: 2.2rem;
+    color: var(--prime-color);
+    letter-spacing: 0.04em;
+}
+
+.work-intro {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.9rem;
+    color: var(--prime-color);
+    opacity: 0.45;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Case study list */
+.work-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.case-study {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--subtle-border);
+}
+
+.case-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+}
+
+.case-index {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    color: var(--prime-color);
+    opacity: 0.3;
+}
+
+.case-client {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--prime-color);
+    opacity: 0.45;
+    font-style: italic;
+}
+
+.case-title {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 1.35rem;
+    color: var(--prime-color);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+/* Three-column body */
+.case-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 0.5rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.case-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.case-col-label {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--prime-color);
+    opacity: 0.35;
+}
+
+.case-col-text {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.88rem;
+    color: var(--prime-color);
+    opacity: 0.7;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Tags */
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.case-tag {
+    font-family: 'Source3', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--prime-color);
+    border: 1px solid var(--subtle-border);
+    padding: 0.25rem 0.75rem;
+}

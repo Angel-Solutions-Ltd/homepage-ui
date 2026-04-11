@@ -1,0 +1,68 @@
+.faq-page {
+    justify-content: flex-start;
+    align-items: center;
+    height: 95vh;
+    overflow-y: auto;
+    padding: 3.5rem 2rem;
+    gap: 3rem;
+}
+
+.faq-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    max-width: 560px;
+}
+
+.faq-title {
+    font-family: 'LoveloLineLight', sans-serif;
+    font-size: 2.2rem;
+    color: var(--prime-color);
+    letter-spacing: 0.04em;
+}
+
+.faq-intro {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.9rem;
+    color: var(--prime-color);
+    opacity: 0.45;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 740px;
+}
+
+.faq-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--subtle-border);
+
+    &:last-child { border-bottom: 1px solid var(--subtle-border); }
+}
+
+.faq-q {
+    font-family: 'LoveloBlack', sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--prime-color);
+}
+
+.faq-a {
+    font-family: 'Source3Light', sans-serif;
+    font-size: 0.97rem;
+    color: var(--prime-color);
+    opacity: 0.65;
+    line-height: 1.8;
+    margin: 0;
+}
