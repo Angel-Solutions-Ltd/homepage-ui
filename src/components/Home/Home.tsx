@@ -59,6 +59,14 @@ export const Home = ({}: P) => {
             <NavLink to="/services" className={`home-cta${showSub ? ' home-cta--visible' : ''}`}>
                 {COPY.home.cta}
             </NavLink>
+            <a
+                href={COPY.nav.bookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`home-book${showSub ? ' home-book--visible' : ''}`}
+            >
+                {COPY.nav.bookBtn}
+            </a>
         </div>
     );
 };
